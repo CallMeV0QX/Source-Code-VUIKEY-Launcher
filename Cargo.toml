@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "crates/update-core",
+    "crates/launcher",
+]
+resolver = "2"
+

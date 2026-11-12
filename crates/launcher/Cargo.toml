@@ -1,0 +1,33 @@
+[package]
+name = "vuikey-launcher"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+update-core = { path = "../update-core" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1.0", features = ["full"] }
+tungstenite = "0.28"
+url = "2.5"
+clap = { version = "4.6", features = ["derive"] }
+tao = "0.34"
+wry = "0.50"
+sha2 = "0.10"
+hex = "0.4"
+thiserror = "1.0"
+crossbeam-channel = "0.5"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_System_Threading",
+    "Win32_System_ProcessStatus",
+    "Win32_System_Registry",
+    "Win32_System_LibraryLoader",
+    "Win32_Security_Cryptography",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Storage_FileSystem"
+] }
+
